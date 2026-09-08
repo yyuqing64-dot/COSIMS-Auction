@@ -1,0 +1,11 @@
+{
+  "note": "Wilcoxon signed-rank tests implemented in pure Python using normal approximation with tie and continuity correction because scipy is unavailable.",
+  "holm_family": "8 key tests: 2 scenarios x 2 baselines x 2 metrics",
+  "synthetic_source": "outputs2/m10_statistical_validation/synthetic_main/raw_by_seed.csv",
+  "trace_source": "outputs2/m10_statistical_validation_trace_smoke/trace_main/raw_by_seed.csv",
+  "trigger_sources": [
+    "outputs2/m10_statistical_validation/synthetic_main/raw_by_seed.csv",
+    "outputs2/m10_statistical_validation/mechanism_overhead/raw_by_seed.csv",
+    "outputs2/m10_statistical_validation_trace_smoke/trace_main/raw_by_seed.csv"
+  ]
+}

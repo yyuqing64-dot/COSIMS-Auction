@@ -1,0 +1,7 @@
+policy,load,avg_change_pct,p95_change_pct,ot_update_prop_comp_ms,trigger_prop_comp
+COSIMS-Auction,1.0,+71.676,+97.840,0.140 / 0.227,35.03 / 63.51
+COSIMS-Auction,1.2,+70.307,+96.711,0.145 / 0.225,35.63 / 66.75
+COSIMS-Auction,1.4,+69.530,+95.953,0.143 / 0.227,36.47 / 68.83
+COSIMS-Sinkhorn,1.0,-7.052,-23.377,0.209 / 0.217,--
+COSIMS-Sinkhorn,1.2,-5.794,-20.697,0.142 / 0.228,--
+COSIMS-Sinkhorn,1.4,-5.085,-19.403,0.139 / 0.221,--

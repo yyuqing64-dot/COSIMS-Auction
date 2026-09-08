@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-09-03 14:23:05",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "synthetic_loads": [
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6
+  ],
+  "mechanism_loads": [
+    1.0,
+    1.2,
+    1.4
+  ],
+  "trace_load_factors": [
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6
+  ],
+  "policies_main": [
+    "rr",
+    "greedy_latency",
+    "sqlf",
+    "cap_greedy",
+    "cosims_sinkhorn",
+    "cosims_auction_B"
+  ],
+  "trace_policies": [
+    "rr",
+    "greedy_latency",
+    "sqlf",
+    "cap_greedy",
+    "cosims_sinkhorn",
+    "cosims_auction_B"
+  ],
+  "policies_mechanism": [
+    "cosims_sinkhorn",
+    "cosims_auction_A",
+    "cosims_auction_B"
+  ],
+  "paper_thresholds": {
+    "window_sec": 5.0,
+    "rate_factor": 10.0,
+    "slope_th": 500000000000.0,
+    "wait_tau": 600000000000.0,
+    "slope_dt_min": 0.2,
+    "slope_dt_max": 0.5,
+    "misfit_delta": 0.5
+  },
+  "cosims": {
+    "epoch_sec": 1.0,
+    "lam": 0.1,
+    "max_iter": 35,
+    "topk": 3,
+    "alpha": 1.0,
+    "eta": 1.0,
+    "eps_noise": 0.0,
+    "event": {
+      "window_sec": 5.0,
+      "rate_factor": 10.0,
+      "slope_th": 500000000000.0,
+      "wait_tau": 600000000000.0,
+      "slope_dt_min": 0.2,
+      "slope_dt_max": 0.5,
+      "misfit_delta": 0.5
+    }
+  },
+  "env": {
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "numpy": "1.26.3",
+    "pandas": "2.3.3",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+  }
+}

@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Validation of OT cost construction. Latency changes are relative to propagation-only OT; positive values indicate higher latency under completion-aware OT.}
+\label{tab:ot_cost_construction}
+\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Policy} & \textbf{Load} & \makecell{\textbf{Avg. Latency}\\\textbf{Change (\%)}} & \makecell{\textbf{P95 Latency}\\\textbf{Change (\%)}} & \makecell{\textbf{OT Update (ms)}\\\textbf{Prop / Comp}} & \makecell{\textbf{Trigger Rate (\%)}\\\textbf{Prop / Comp}} \\
+\midrule
+COSIMS-Auction & 1.0 & +71.676 & +97.840 & 0.140 / 0.227 & 35.03 / 63.51 \\
+COSIMS-Sinkhorn & 1.0 & -7.052 & -23.377 & 0.209 / 0.217 & -- \\
+COSIMS-Auction & 1.2 & +70.307 & +96.711 & 0.145 / 0.225 & 35.63 / 66.75 \\
+COSIMS-Sinkhorn & 1.2 & -5.794 & -20.697 & 0.142 / 0.228 & -- \\
+COSIMS-Auction & 1.4 & +69.530 & +95.953 & 0.143 / 0.227 & 36.47 / 68.83 \\
+COSIMS-Sinkhorn & 1.4 & -5.085 & -19.403 & 0.139 / 0.221 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

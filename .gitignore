@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local scratch outputs
+outputs_tmp/
+*.log

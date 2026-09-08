@@ -1,0 +1,28 @@
+{
+  "source_dirs": [
+    "outputs2/m11_scalability_timed",
+    "outputs2/m11_scalability_n150",
+    "outputs2/m11_scalability_optional_n200"
+  ],
+  "n_nodes": [
+    20,
+    50,
+    100,
+    150,
+    200
+  ],
+  "load": 1.2,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "policies": [
+    "cosims_sinkhorn",
+    "cosims_auction_B",
+    "cap_greedy"
+  ],
+  "note": "Simulator currently scales square n_nodes, effectively N_U=N_E=N. N=200 is optional_scale=True."
+}

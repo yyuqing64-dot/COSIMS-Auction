@@ -1,0 +1,5 @@
+Threshold,Range,MaxAbsAvgChangePct,MaxAbsP95ChangePct,TriggerRateRangePct
+$\\tau_\\Delta$,$0.25$--$0.75$,0.0,0.0,35.55--35.55
+$\\tau_W$,$3\\times10^{11}$--$9\\times10^{11}$,0.0009515360166023,0.0104422440954543,35.55--60.04
+$\\tau_S$,$2.5\\times10^{11}$--$7.5\\times10^{11}$,0.0,0.0,35.55--35.55
+$\\rho_\\lambda$,$5$--$15$,0.0,0.0,35.55--35.55

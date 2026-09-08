@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the anonymized COSIMS-Auction manuscript under review. Author metadata is intentionally omitted for double-blind review."
+title: "COSIMS-Auction: Optimal Transport Reference Planning with Triggered Auction Correction for Edge-Cloud Scheduling"
+authors:
+  - name: "Anonymous Author(s)"
+year: 2026
+type: software
+license: MIT
+keywords:
+  - edge-cloud scheduling
+  - optimal transport
+  - online scheduling
+  - auction correction
+  - reproducibility

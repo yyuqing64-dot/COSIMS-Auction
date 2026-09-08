@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-09-06 14:54:13",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "loads": [
+    1.0,
+    1.2,
+    1.4
+  ],
+  "variants": [
+    "sinkhorn_count",
+    "sinkhorn_workload",
+    "auction_count",
+    "auction_workload"
+  ],
+  "note": "Synthetic M12 compares count-based and workload-weighted source demand vectors for the epoch-level OT reference.",
+  "env": {
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "numpy": "1.26.3",
+    "pandas": "2.3.3",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+  }
+}

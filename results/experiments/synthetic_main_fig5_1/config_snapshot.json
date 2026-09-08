@@ -1,0 +1,71 @@
+{
+  "n_nodes": 20,
+  "sim_time": 600.0,
+  "warmup_time": 60.0,
+  "epoch": 1.0,
+  "arrival": {
+    "base_total_rate": 12.0
+  },
+  "task": {
+    "cpu_logn_mu": 21.5,
+    "cpu_logn_sigma": 0.6,
+    "data_mb_min": 0.5,
+    "data_mb_max": 5.0
+  },
+  "capacity": {
+    "xi": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "network": {
+    "latency_ms_min": 5.0,
+    "latency_ms_max": 40.0,
+    "diagonal_ms": 1.0,
+    "symmetric": true
+  },
+  "cloud": {
+    "enabled": true,
+    "cloud_latency_ms": 80.0,
+    "cloud_capacity_xi": 10.0
+  },
+  "cosims": {
+    "epoch_sec": 1.0,
+    "lam": 0.1,
+    "max_iter": 35,
+    "topk": 3,
+    "alpha": 1.0,
+    "eta": 1.0,
+    "eps_noise": 0.0,
+    "event": {
+      "window_sec": 5.0,
+      "rate_factor": 1.5,
+      "slope_th": 0.5,
+      "wait_tau": 2.0,
+      "slope_dt_min": 0.2,
+      "slope_dt_max": 0.5,
+      "misfit_delta": 0.2
+    }
+  },
+  "sqlf": {
+    "allow_cloud": true
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-09-06 17:08:16",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "loads": [
+    1.0,
+    1.2,
+    1.4
+  ],
+  "variants": [
+    "sinkhorn_prop",
+    "sinkhorn_comp",
+    "auction_prop",
+    "auction_comp"
+  ],
+  "note": "M13 compares propagation-only and completion-aware OT cost construction for Sinkhorn and Auction.",
+  "env": {
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "numpy": "1.26.3",
+    "pandas": "2.3.3",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+  }
+}

@@ -1,0 +1,4 @@
+load,avg_change_pct,p95_change_pct,trigger_count,trigger_workload
+1.0,+0.005,+0.019,34.74,34.22
+1.2,+0.003,+0.029,35.51,34.76
+1.4,+0.000,-0.008,36.40,34.97

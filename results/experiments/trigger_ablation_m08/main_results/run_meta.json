@@ -1,0 +1,31 @@
+{
+  "timestamp": "packaged-release-metadata",
+  "config_path": "configs/auction_B_recommended_sqlf_cloud.json",
+  "loads": [
+    1.0,
+    1.2,
+    1.4
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "policies": [
+    "cosims_auction_B"
+  ],
+  "variants": [
+    "Full",
+    "w/o AS",
+    "w/o LC",
+    "w/o RM",
+    "No Trigger"
+  ],
+  "output_files": [
+    "trigger_ablation_raw_by_seed.csv",
+    "trigger_ablation_summary_mean_std.csv"
+  ],
+  "note": "Metadata added for the reproducibility package; seeds and loads match the packaged raw-by-seed CSV."
+}

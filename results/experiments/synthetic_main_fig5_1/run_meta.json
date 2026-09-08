@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-07-21 18:15:41",
+  "config_path": "configs/auction_B_recommended_sqlf_cloud.json",
+  "loads": [
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5,
+    1.6
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "policies": [
+    "rr",
+    "greedy_latency",
+    "sqlf",
+    "cap_greedy",
+    "cosims_sinkhorn",
+    "cosims_auction_B"
+  ],
+  "sweep_nodes": [
+    20
+  ],
+  "sweep_topk": [
+    3
+  ],
+  "trace_load_factors": [
+    null
+  ],
+  "trace_manifest": "",
+  "trace_factor_col": "trace_load_factor",
+  "trace_file_col": "file",
+  "ts_window": 0.0,
+  "env": {
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "numpy": "1.26.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.8.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35"
+  },
+  "config_sha256": "fb5adafe330570303bbe6400bc33f5ff61d88f2ddeca1b8f06f4cb72a3482350"
+}
