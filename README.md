@@ -40,6 +40,14 @@ See [`REPRODUCE.md`](REPRODUCE.md) for commands to regenerate figures, re-run th
 
 For a reviewer-facing checklist of reproducibility items, see [`docs/reproducibility_checklist.md`](docs/reproducibility_checklist.md). The random seeds used in the packaged outputs are listed in [`docs/random_seeds.md`](docs/random_seeds.md).
 
+## Reproduction documentation
+
+- [Experiment environment and decision-time measurement](docs/environment_and_timing.md)
+- [Observation-based threshold calibration](docs/threshold_calibration.md)
+- [Commands for the manuscript experiments](REPRODUCE.md)
+
+The manuscript configuration is [configs/manuscript_reproduction.json](configs/manuscript_reproduction.json). The calibration entry point generates its configurations, generated thresholds, and paired summaries locally when explicitly run. No numerical results are added by this documentation update.
+
 ## Citation
 
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff). The review repository URL should be provided through the submission system or an anonymous archival link during double-blind review. 

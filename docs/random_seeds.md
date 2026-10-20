@@ -1,22 +1,12 @@
-# Random Seeds Used in the Experiments
+# Random seeds for reproduction commands
 
-This document records the random seeds used by the packaged experiment outputs and by the reproduction commands in `REPRODUCE.md`.
+The manuscript reproduction commands use ten paired evaluation seeds, 0--9, unless a command explicitly selects another list. Methods compared within a seed must use the same workload stream, configuration, and initial state.
 
-All seeds are integer seeds passed to the simulator. The exact seed list for each packaged run is also stored in the corresponding `run_meta.json` file under `results/experiments/`.
+| Reproduction command | Seed option |
+|---|---|
+| Main synthetic and trace comparisons | --seeds 0-9 |
+| Candidate-size sweep | --seeds 0-9 |
+| Observation-based threshold calibration | --calibration-seed 1000 --seeds 0-9 |
+| Existing M08--M13 entry points | Use their --seeds option when supported; consult --help for the interface |
 
-| Experiment | Packaged output directory | Seeds |
-|---|---|---|
-| Synthetic main evaluation, Fig. 3 | `results/experiments/synthetic_main_fig5_1/` | `0,1,2,3,4` |
-| Trace replay main evaluation, Fig. 5 | `results/experiments/trace_main_fig5_3/` | `0,1,2,3,4` |
-| Trace trade-off, Fig. 6 | `results/experiments/trace_tradeoff_fig5_4/` | `0,1,2,3,4` |
-| Mechanism variants and trigger overhead, Fig. 7 and Fig. 8 | `results/experiments/mechanism_variants_fig5_5_5_6/` | `0,1,2,3,4` |
-| Candidate-size sensitivity | `results/experiments/k_sensitivity/` | `0,1,2,3,4` |
-| M08 trigger ablation | `results/experiments/trigger_ablation_m08/` | `0,1,2,3,4` |
-| M09 trigger-threshold sensitivity | `results/experiments/threshold_sensitivity_m09/` | `0,1,2,3,4` |
-| M10 statistical validation | `results/experiments/statistical_validation_m10/` | `0,1,2,3,4,5,6,7,8,9` |
-| M10 trace statistical validation | `results/experiments/statistical_validation_trace_m10/` | `0,1,2,3,4,5,6,7,8,9` |
-| M11 scalability/runtime analysis | `results/experiments/scalability_m11/` | `0,1,2,3,4` |
-| M12 OT demand construction validation | `results/experiments/ot_demand_construction_m12/` | `0,1,2,3,4` |
-| M13 OT cost construction validation | `results/experiments/ot_cost_construction_m13/` | `0,1,2,3,4,5,6,7,8,9` |
-
-The manuscript reports statistical validation with 10 seeds where significance testing is needed. Several design-validation and sensitivity experiments are packaged with 5 seeds because their purpose is to check mechanism robustness rather than to establish the primary performance comparison.
+The threshold-calibration seed is independent of every evaluation seed. Calibration thresholds are frozen before evaluation, and the generated manifest records both seed lists. A command's selected seeds and the metadata written by its runner determine the actual replication count. When inspecting an existing result file, use its associated run_meta.json rather than inferring its seeds from a command example.

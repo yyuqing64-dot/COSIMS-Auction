@@ -4,6 +4,8 @@ This document lists the commands needed to reproduce the main figures and the su
 
 ## 1. Environment
 
+The experimental server uses 15 vCPUs of an Intel Xeon Platinum 8474C, 80 GB RAM, and one NVIDIA RTX 4090D (24 GB). The supplied image is Ubuntu 22.04 with Python 3.12, PyTorch 2.8.0, and CUDA 12.8. Scheduling simulations use NumPy/Pandas and do not require GPU execution. See [the environment and timing note](docs/environment_and_timing.md) for platform roles and timing boundaries.
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -89,7 +91,7 @@ Synthetic main experiment:
 
 ```bash
 python eval/runner.py \
-  --config configs/auction_B_recommended_sqlf_cloud.json \
+  --config configs/manuscript_reproduction.json \
   --out results/experiments/synthetic_main_rerun/summary_mean_std.csv \
   --loads 0.8,0.9,1.0,1.1,1.2,1.3,1.4,1.5,1.6 \
   --seeds 0-9 \
@@ -100,7 +102,7 @@ Trace replay main experiment:
 
 ```bash
 python eval/runner.py \
-  --config configs/auction_B_recommended_sqlf_cloud.json \
+  --config configs/manuscript_reproduction.json \
   --out results/experiments/trace_main_rerun/summary_mean_std.csv \
   --loads 1.0 \
   --seeds 0-9 \
@@ -165,6 +167,19 @@ python scripts/run_m13_ot_cost_construction.py \
 
 ## 6. Re-run K Sensitivity Figure/Table
 
+To rerun the candidate-size experiment rather than only regenerate its figure:
+
+```bash
+python eval/runner.py \\
+  --config configs/manuscript_reproduction.json \\
+  --out results/experiments/k_sensitivity_reproduction/summary_mean_std.csv \\
+  --loads 1.0,1.2,1.4 \\
+  --seeds 0-9 \\
+  --policies cosims_auction_B \\
+  --sweep_topk 1,2,3,5,8,10,20
+```
+
+
 The packaged K-sensitivity results can be reprocessed with:
 
 ```bash
@@ -193,6 +208,23 @@ These files are the processed Alibaba trace arrival streams used by the trace re
 
 Packaged numerical results are stored under `results/experiments/`. Main figure directories include the summary statistics used to regenerate the exact paper figures. Statistical-validation and supplementary experiment directories additionally include raw per-seed CSV files where those values are needed for confidence intervals, significance tests, or mechanism comparisons.
 
-## 9. Reproducibility Checklist
+## 9. Observation-based threshold calibration
+
+This experiment is distinct from M09 fixed-threshold sensitivity. It calibrates waiting and queue-growth thresholds independently at each load, freezes Q90/Q95/Q99 values, and evaluates them against the fixed-threshold control on paired streams.
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \\
+python scripts/run_threshold_calibration.py \\
+  --config configs/manuscript_reproduction.json \\
+  --loads 1.0,1.2,1.4 \\
+  --quantiles 0.90,0.95,0.99 \\
+  --calibration-seed 1000 \\
+  --seeds 0-9 \\
+  --out results/experiments/threshold_calibration_reproduction
+```
+
+Run from the repository root and use a new output directory on each invocation. This command performs simulations only when explicitly executed; `python scripts/run_threshold_calibration.py --help` only displays options. See [the calibration protocol](docs/threshold_calibration.md) for settings, signals, and output definitions. Generated configurations and numerical results remain local; committing them is optional.
+
+## 10. Reproducibility Checklist
 
 The file [`docs/reproducibility_checklist.md`](docs/reproducibility_checklist.md) maps reviewer reproducibility concerns to the corresponding repository files, including the license, Docker/environment files, trace inputs, experiment configurations, figure commands, and seed lists.
